@@ -1,0 +1,287 @@
+package com.spring.hometownC;
+
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.spring.hometownC.impl.CategoryDAO;
+import com.spring.hometownC.impl.CategoryDO;
+import com.spring.hometownC.impl.CommentDAO;
+import com.spring.hometownC.impl.CommentDO;
+import com.spring.hometownC.impl.MemberDAO;
+import com.spring.hometownC.impl.MemberDO;
+import com.spring.hometownC.impl.PostDAO;
+import com.spring.hometownC.impl.PostDO;
+
+@Controller
+public class hometownCController {
+
+	@Autowired
+	PostDAO pdao;
+	@Autowired
+	CategoryDAO cdao;
+	@Autowired
+	CommentDAO cmdao;
+	@Autowired
+	MemberDAO mdao;
+
+	// 게시글 관련 기능
+
+	// home(전체글) 불러오기
+	@RequestMapping("/getPostList.do")
+	public String postList( Model model) {
+		System.out.println("postList() --> ");
+
+		ArrayList<PostDO> plist = pdao.getPostList();
+		model.addAttribute("plist", plist);
+
+		return "postListView";
+
+	}
+
+	// 카테고리별 게시글 불러오기
+	@RequestMapping("/getPostListCate.do")
+	public String postListCate(int cateSeq, Model model) {
+		System.out.println("postListCate() --> ");
+
+		ArrayList<PostDO> plist = pdao.getPostListCate(cateSeq);
+		model.addAttribute("plist", plist);
+
+		return "postListView";
+
+	}
+
+	// 글쓰기 버튼 클릭
+	@RequestMapping("/insertPost.do")
+	public String insertPost(Model model) {
+		System.out.println("insertPost() --> ");
+
+		return "insertPostView";
+	}
+
+	// 글 작성 후 업로드
+	@RequestMapping("/insertPostProc.do")
+	public String insertPostProc(PostDO pdo, MemberDO mdo, Model model) {
+		System.out.println("insertPostProc() --> ");
+
+		pdao.insertPost(pdo);
+		return "redirect:getPostList.do";
+	}
+
+	// 선택한 글 불러오기
+	@RequestMapping(value = "/getPost.do")
+	public String getPost(@ModelAttribute("pdo") PostDO pdo, Model model) {
+		System.out.println("getPost() --> ");
+
+		PostDO post = pdao.getPost(pdo);
+		model.addAttribute("post", post);
+		System.out.println("getPost() --> ");
+		CategoryDO cate = cdao.getCategory(post);
+		model.addAttribute("cate", cate);
+
+		ArrayList<CommentDO> commentList = cmdao.getCommentList(post);
+		model.addAttribute("commentList", commentList);
+		System.out.println("getPost() --> ");
+		return "getPostView";
+	}
+
+	//글 수정하기 버튼 클릭 시 화면
+	@RequestMapping("/modifyPost.do")
+	public String modifyPost(PostDO pdo, Model model) {
+		System.out.println("modifyPost() --> ");
+
+		PostDO post = pdao.getPost(pdo);
+		model.addAttribute("post", post);
+		CategoryDO cate = cdao.getCategory(post);
+		model.addAttribute("cate", cate);
+		ArrayList<CategoryDO> clist = cdao.getCategoryList();
+		model.addAttribute("clist", clist);
+
+		return "modifyPostView";
+	}
+
+	// 실제 글 수정 동작
+	@RequestMapping("/modifyPostProc.do")
+	public String modifyPostProc(PostDO pdo) {
+		System.out.println("modifyPostProc() --> ");
+
+		pdao.modifyPostProc(pdo);
+
+		return "redirect:getPostList.do";
+	}
+
+	// 글 삭제하기 버튼
+	@RequestMapping("/deletePost.do")
+	public String deletePost(PostDO pdo) {
+		System.out.println("deletePost() --> ");
+
+		pdao.deletePost(pdo);
+
+		return "redirect:getPostList.do";
+	}
+
+	// 좋아요 기능
+	@RequestMapping("/likedPost.do")
+	public String likedPost(PostDO pdo, RedirectAttributes redirectAttributes) {
+		System.out.println("likedPost() --> ");
+
+		PostDO post = pdao.getPost(pdo);
+		pdao.likedPost(post);
+		System.out.println("likedPost() --> ");
+		redirectAttributes.addFlashAttribute("pdo", post);
+		System.out.println("likedPost() --> ");
+
+		return "redirect:getPost.do";
+	}
+
+	// 댓글 관련 기능
+	@RequestMapping("/insertComment.do")
+	public String insertComment(CommentDO cmdo, PostDO pdo, RedirectAttributes redirectAttributes) {
+		System.out.println("insertComment() --> ");
+
+		cmdao.insertComment(cmdo, pdo);
+
+		PostDO post = pdao.getPost(pdo);
+		
+		redirectAttributes.addFlashAttribute("pdo", post);
+
+		return "redirect:getPost.do";
+	}
+
+	// 로그인 관련 기능.
+	@RequestMapping("/login.do")
+	public String login() {
+		System.out.println("login() --> ");
+
+		return "login";
+	}
+
+	@RequestMapping(value = "loginProc.do", method = RequestMethod.POST)
+	public String loginProc(MemberDO mdo,HttpServletRequest httpServletRequest, Model model) {
+		System.out.println("loginProc() --> ");
+
+		MemberDO user = mdao.checkMember(mdo.getId(), mdo.getPassword());
+		
+		if(user != null) {
+			httpServletRequest.getSession().invalidate(); //세션을 생성하기 전에 기존에 세션 파기
+			HttpSession session = httpServletRequest.getSession(true); //Session이 없으면 생성
+			
+			session.setAttribute("userId", user.getId());//세션에 userId를 넣어줌
+			session.setMaxInactiveInterval(1800); // Session이 30분동안 유지
+			
+			return "redirect:getPostList.do";
+		}
+
+		return "memberJoin";
+	}
+
+	//회원가입
+	@RequestMapping(value = "/memberJoin.do")
+	public String memberJoin() {
+		System.out.println("memberJoin() --> ");
+
+		return "memberJoin";
+	}
+
+	@RequestMapping(value = "/memberJoinProc.do")
+	public String memberJoinPorc(MemberDO mdo) {
+		System.out.println("memeberJointProc() --> ");
+
+		mdao.memberJoin(mdo);
+
+		return "login";
+	}
+
+	//회원 수정하는 화면 불러오기
+	@RequestMapping(value = "/editMember.do")
+	public String editMember(MemberDO mdo, Model model) {
+		System.out.println("editMember() --> ");
+
+		MemberDO member = mdao.getMember(mdo);
+		model.addAttribute("member", member);
+		return "editMember";
+	}
+
+	//실제 회원 수정 동작
+	@RequestMapping(value = "/editMemberProc.do")
+	public String editMemberProc(MemberDO mdo) {
+		System.out.println("editMemberProc() --> ");
+
+		MemberDO member = mdao.getMember(mdo);
+
+		mdao.editMember(mdo);
+
+		return "forward:getPostList.do?mdo=member";
+	}
+
+	// 회원 가입 아이디 중복 체크
+	@RequestMapping("checkId.do")
+	public String checkId(@RequestParam("id") String id) {
+		System.out.println("checkId() --> ");
+
+		ArrayList<MemberDO> mList = mdao.getMemberList();
+
+		for (int i = 0; i < mList.size(); i++) {
+			MemberDO mListmdo = mList.get(i);
+
+			if (id.equals(mListmdo.getId())) {
+				return "N";
+			}
+		}
+
+		return "Y";
+	}
+
+	// 글 검색 기능
+	@RequestMapping(value = "searchPostList.do")
+	public String searchPostList(@RequestParam(value = "searchCon") String searchCon,
+			@RequestParam(value = "searchKey") String searchKey, MemberDO mdo, Model model) {
+		System.out.println("searchPostList --> ");
+
+		MemberDO member = mdao.getMember(mdo);
+
+		ArrayList<PostDO> plist = pdao.searchPostList(searchCon, searchKey);
+		model.addAttribute("plist", plist);
+		model.addAttribute("member", member);
+
+		return "postListView";
+
+	}
+
+	// 글 정렬 기능
+	@RequestMapping(value = "sortByDate.do")
+	public String sortByDate(MemberDO mdo, Model model) {
+
+		ArrayList<PostDO> plist = pdao.sortByDate();
+
+		model.addAttribute("plist", plist);
+		MemberDO member = mdao.getMember(mdo);
+		model.addAttribute("member", member);
+
+		return "postListView";
+	}
+
+	// 글 정렬 기능
+	@RequestMapping(value = "sortByLiked.do")
+	public String sortByLiked(MemberDO mdo, Model model) {
+
+		ArrayList<PostDO> plist = pdao.sortByLiked();
+
+		model.addAttribute("plist", plist);
+		MemberDO member = mdao.getMember(mdo);
+		model.addAttribute("member", member);
+
+		return "postListView";
+	}
+
+}

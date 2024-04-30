@@ -1,0 +1,71 @@
+
+4월 15, 2024 17:31:50.97 NEW SESSION
+4월 15, 2024 17:31:50.97 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+4월 15, 2024 20:13:21.35 [20788:15748:0415/201321.355:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 15, 2024 20:16:43.35 [20788:15748:0415/201643.357:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 15, 2024 20:25:13.05 [20788:15748:0415/202513.058:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -7
+4월 15, 2024 20:28:43.06 [20788:15748:0415/202843.060:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 16, 2024 09:28:11.67 [20788:15748:0416/092811.670:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -7
+4월 16, 2024 11:06:06.03 [20788:15748:0416/110606.027:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 16, 2024 11:13:08.58 [20788:15748:0416/111308.585:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -7
+4월 16, 2024 12:01:27.38 [20788:15748:0416/120127.382:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 16, 2024 12:02:24.12 [20788:15748:0416/120224.127:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 16, 2024 12:03:45.26 [20788:15748:0416/120345.260:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 16, 2024 12:04:17.83 [20788:15748:0416/120417.833:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 16, 2024 12:05:09.02 [20788:15748:0416/120509.024:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 16, 2024 12:07:06.54 [20788:15748:0416/120706.540:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 16, 2024 12:08:10.31 [20788:15748:0416/120810.314:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 16, 2024 12:10:20.80 [20788:10656:0416/121020.802:ERROR:device_event_log_impl.cc(195)] [12:10:20.802] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
+4월 16, 2024 12:11:13.06 [20788:10656:0416/121113.061:ERROR:interface_endpoint_client.cc(707)] Message 0 rejected by interface blink.mojom.WidgetHost
+4월 16, 2024 12:17:02.67 [20788:10656:0416/121702.675:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 12:17:02.78 [20788:10656:0416/121702.785:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 12:17:03.56 [20788:10656:0416/121703.562:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 12:17:03.86 [20788:10656:0416/121703.862:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 12:17:04.15 [20788:10656:0416/121704.150:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 12:17:04.30 [20788:10656:0416/121704.299:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 12:17:04.91 [20788:10656:0416/121704.914:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 12:17:05.04 [20788:10656:0416/121705.045:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 12:17:05.54 [20788:10656:0416/121705.546:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 12:17:06.01 [20788:10656:0416/121706.013:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 12:17:06.39 [20788:10656:0416/121706.394:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 12:17:06.58 [20788:10656:0416/121706.586:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 12:17:06.70 [20788:10656:0416/121706.703:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 12:17:06.83 [20788:10656:0416/121706.830:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 12:17:06.95 [20788:10656:0416/121706.952:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 12:17:07.06 [20788:10656:0416/121707.060:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 12:17:07.25 [20788:10656:0416/121707.251:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 12:17:07.39 [20788:10656:0416/121707.394:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 12:17:07.43 [20788:10656:0416/121707.432:ERROR:page_load_metrics_update_dispatcher.cc(179)] Invalid first_paint 0.358 s for first_image_paint 0.332 s
+4월 16, 2024 13:29:30.79 [20788:10656:0416/132930.789:ERROR:interface_endpoint_client.cc(707)] Message 0 rejected by interface blink.mojom.WidgetHost
+4월 16, 2024 19:14:42.07 [20788:15748:0416/133908.464:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 16, 2024 19:14:42.16 [20788:15748:0416/191442.089:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -7
+4월 16, 2024 19:45:56.02 [20788:15748:0416/194556.021:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 16, 2024 20:01:58.76 [20788:15748:0416/200158.759:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 16, 2024 20:02:01.43 [20788:15748:0416/200201.431:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 16, 2024 20:15:17.58 [20788:15748:0416/201517.583:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 16, 2024 21:56:53.16 [20788:15748:0416/215653.159:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -7
+4월 16, 2024 22:54:19.73 [20788:15748:0416/224726.540:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 16, 2024 22:54:19.86 [20788:15748:0416/225419.642:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -7
+4월 16, 2024 22:54:28.53 [20788:15748:0416/225428.538:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 16, 2024 22:55:15.92 [20788:15748:0416/225515.928:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 16, 2024 22:56:57.58 [20788:15748:0416/225657.582:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 17, 2024 13:35:02.59 [20788:15748:0417/133502.493:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 17, 2024 13:38:02.98 [20788:15748:0417/133802.983:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 17, 2024 13:50:21.06 [20788:15748:0417/135021.065:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -7
+4월 17, 2024 13:50:21.18 [20788:13448:0417/135021.185:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+4월 17, 2024 13:50:29.23 [20788:15748:0417/135029.229:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 17, 2024 13:51:18.36 [20788:3432:0417/135118.366:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_INTERNET_DISCONNECTED)
+4월 17, 2024 13:51:32.75 [20788:15748:0417/135132.754:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -106
+4월 17, 2024 13:52:32.20 [20788:3432:0417/135232.201:ERROR:get_updates_processor.cc(263)] PostClientToServerMessage() failed during GetUpdates with error Network error (ERR_NAME_NOT_RESOLVED)
+4월 17, 2024 13:52:54.07 [20788:15748:0417/135254.075:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -105
+4월 17, 2024 14:04:08.62 [20788:10656:0417/140408.622:ERROR:device_event_log_impl.cc(195)] [14:04:08.622] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
+4월 17, 2024 14:04:22.44 [20788:10656:0417/140422.447:ERROR:interface_endpoint_client.cc(707)] Message 1 rejected by interface blink.mojom.WidgetHost
+4월 17, 2024 14:04:22.45 [20788:10656:0417/140422.447:ERROR:interface_endpoint_client.cc(707)] Message 1 rejected by interface blink.mojom.WidgetHost
+4월 17, 2024 14:24:10.03 [20788:15748:0417/142351.928:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 17, 2024 14:24:10.03 [20788:15748:0417/142351.928:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 17, 2024 14:56:55.04 [20788:10656:0417/145655.039:ERROR:interface_endpoint_client.cc(707)] Message 1 rejected by interface blink.mojom.WidgetHost
+4월 17, 2024 15:03:21.94 [20788:15748:0417/150321.938:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 17, 2024 15:03:21.95 [20788:15748:0417/150321.939:ERROR:connection_factory_impl.cc(483)] ConnectionHandler failed with net error: -2
+4월 17, 2024 15:34:57.19 [20788:15748:0417/153457.198:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -7
+4월 17, 2024 15:34:57.24 [20788:15748:0417/153457.199:ERROR:connection_factory_impl.cc(434)] Failed to connect to MCS endpoint with error -7
+4월 17, 2024 15:35:56.39 [20788:10656:0417/153556.390:ERROR:device_event_log_impl.cc(195)] [15:35:56.389] USB: usb_service_win.cc:105 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: �슂�냼媛� �뾾�뒿�땲�떎. (0x490)
